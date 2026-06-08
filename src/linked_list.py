@@ -49,7 +49,15 @@ class LinkedList:
         Args:
             data: El valor a insertar.
         """
-        raise NotImplementedError("Equipo A debe implementar append()")
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+
 
     # ------------------------------------------------------------------ #
     # TODO — Equipo B: rama feature/delete                                #
@@ -77,4 +85,10 @@ class LinkedList:
         Returns:
             El nodo que contiene data, o None si no existe.
         """
-        raise NotImplementedError("Equipo C debe implementar search()")
+    
+        current = self.head
+        while current is not None:
+            if current.data == data:
+               return current
+            current = current.next
+        return None
