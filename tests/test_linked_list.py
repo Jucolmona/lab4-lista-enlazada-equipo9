@@ -118,4 +118,4 @@ def test_search_ultimo_elemento():
     nodo = ll.search(3)
     assert nodo is not None
     assert nodo.data == 3
-main
+
